@@ -10,5 +10,5 @@ Filter point clouds using spatial density information
 ## Test
 
 ```sh
-spatial-density-filter --input-file ../input.off --radius 0.0001 --nn-threshold 25
+spatial-density-filter --input-file ../data/input.off --radius 0.0001 --nn-threshold 25
 ```
