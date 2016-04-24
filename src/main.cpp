@@ -49,7 +49,7 @@ public:
                 query.at<float>(0,c)=data.at<float>(i,c);
             res[i]=kdtree.radiusSearch(query,indices,dists,
                                        radius,maxResults,
-                                       cv::flann::SearchParams(32));
+                                       cv::flann::SearchParams(128));
         }
 
         return res;
@@ -64,8 +64,8 @@ int main(int argc, char *argv[])
     rf.setQuiet();    
     rf.setDefault("input-file","input.off");
     rf.setDefault("output-file","output.off");
-    rf.setDefault("radius",yarp::os::Value(0.0001));
-    rf.setDefault("nn-threshold",yarp::os::Value(25));
+    rf.setDefault("radius",yarp::os::Value(0.0002));
+    rf.setDefault("nn-threshold",yarp::os::Value(80));
     rf.configure(argc,argv);
 
     double radius=rf.find("radius").asDouble();
